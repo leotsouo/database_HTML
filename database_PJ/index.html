@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理系統入口</title>
+    <style>
+        /* 全局設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .intro-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* 標題 */
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* 說明文字 */
+        .description {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #555;
+            text-align: center;
+        }
+
+        /* 按鈕設計 */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #00b4db;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-bottom: 12px;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #0083b0;
+            transform: translateY(-3px);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        /* 按鈕區域 */
+        .btn-container {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .intro-box {
+                width: 80%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .btn {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-box">
+        <h2>歡迎來到高雄大學激發學生創意競賽管理系統</h2>
+        <p class="description">這是系統的公開入口。</p>
+        <div class="btn-container">
+            <a href="student_system.html">
+                <input type="button" value="進入學生系統" class="btn">
+            </a>
+            <a href="admin_dashboard.html">
+                <input type="button" value="進入後台管理系統" class="btn">
+            </a>
+            <a href="grading_system.html">
+                <input type="button" value="進入評分系統" class="btn">
+            </a>
+            <a href="guest_view.html">
+                <input type="button" value="訪客" class="btn">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

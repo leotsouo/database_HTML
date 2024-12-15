@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理後台 - 高雄大學激發學生創意競賽</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h3 {
+            color: #0083b0;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: #00b4db;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #0083b0;
+            transform: translateY(-3px);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="date"], input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #00b4db;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>管理後台</h2>
+
+        <!-- 公告管理 -->
+        <div class="section">
+            <h3>公告管理</h3>
+            <form action="manage_announcements.php" method="POST">
+                <div class="form-group">
+                    <label for="announcementTitle">公告標題：</label>
+                    <input type="text" id="announcementTitle" name="announcementTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="announcementContent">公告內容：</label>
+                    <textarea id="announcementContent" name="announcementContent" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="announcementFile">附件：</label>
+                    <input type="file" id="announcementFile" name="announcementFile" accept=".pdf,.doc,.docx,.jpg,.png">
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn">新增公告</button>
+                </div>
+            </form>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>公告標題</th>
+                            <th>發布時間</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 假資料 -->
+                        <tr>
+                            <td>公告1</td>
+                            <td>2023-12-01</td>
+                            <td>
+                                <button class="btn">編輯</button>
+                                <button class="btn" style="background-color: #e74c3c;">刪除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>公告2</td>
+                            <td>2023-11-20</td>
+                            <td>
+                                <button class="btn">編輯</button>
+                                <button class="btn" style="background-color: #e74c3c;">刪除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 隊伍與作品管理 -->
+        <div class="section">
+            <h3>隊伍與作品管理</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>隊伍名稱</th>
+                            <th>作品名稱</th>
+                            <th>隊伍成員</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 假資料 -->
+                        <tr>
+                            <td>隊伍A</td>
+                            <td>創新作品1</td>
+                            <td>成員1, 成員2</td>
+                            <td>
+                                <button class="btn">檢視</button>
+                                <button class="btn">編輯</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>隊伍B</td>
+                            <td>創新作品2</td>
+                            <td>成員3, 成員4</td>
+                            <td>
+                                <button class="btn">檢視</button>
+                                <button class="btn">編輯</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 評審管理 -->
+        <div class="section">
+            <h3>評審管理</h3>
+            <form action="manage_judges.php" method="POST">
+                <div class="form-group">
+                    <label for="judgeName">評審姓名：</label>
+                    <input type="text" id="judgeName" name="judgeName" required>
+                </div>
+                <div class="form-group">
+                    <label for="judgeEmail">評審電子郵件：</label>
+                    <input type="email" id="judgeEmail" name="judgeEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="judgeType">評審類型：</label>
+                    <select id="judgeType" name="judgeType" required>
+                        <option value="internal">校內</option>
+                        <option value="external">校外</option>
+                    </select>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn">新增評審</button>
+                </div>
+            </form>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>評審姓名</th>
+                            <th>評審類型</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 假資料 -->
+                        <tr>
+                            <td>評審A</td>
+                            <td>校內</td>
+                            <td>
+                                <button class="btn">編輯</button>
+                                <button class="btn" style="background-color: #e74c3c;">刪除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>評審B</td>
+                            <td>校外</td>
+                            <td>
+                                <button class="btn">編輯</button>
+                                <button class="btn" style="background-color: #e74c3c;">刪除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 評分統計 -->
+        <div class="section">
+            <h3>評分統計</h3>
+            <p>系統將自動生成得獎名單，根據評分進行統計：</p>
+            <div class="btn-container">
+                <button class="btn">生成得獎名單</button>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="index.html">
+                <button class="btn">返回首頁</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

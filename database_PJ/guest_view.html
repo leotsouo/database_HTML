@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>訪客瀏覽 - 高雄大學激發學生創意競賽</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .guest-container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h3 {
+            color: #0083b0;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: #00b4db;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #0083b0;
+            transform: translateY(-3px);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #00b4db;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            .guest-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guest-container">
+        <h2>訪客瀏覽系統</h2>
+
+        <!-- 公告查看 -->
+        <div class="section">
+            <h3>最新公告</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>公告標題</th>
+                            <th>發布時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 假資料 -->
+                        <tr>
+                            <td><a href="announcement_detail.html?announcementID=1">2024年學生創意競賽開幕</a></td>
+                            <td>2024-12-01</td>
+                        </tr>
+                        <tr>
+                            <td><a href="announcement_detail.html?announcementID=2">比賽作品提交截止時間通知</a></td>
+                            <td>2024-12-10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 隊伍名次 -->
+        <div class="section">
+            <h3>隊伍名次</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>隊伍名稱</th>
+                            <th>得分</th>
+                            <th>名次</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 假資料 -->
+                        <tr>
+                            <td>隊伍A</td>
+                            <td>95</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>隊伍B</td>
+                            <td>88</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>隊伍C</td>
+                            <td>82</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 歷屆資料查詢 -->
+        <div class="section">
+            <h3>歷屆資料查詢</h3>
+            <div class="form-group">
+                <label for="competitionYear">選擇年份：</label>
+                <input type="number" id="competitionYear" name="competitionYear" min="2010" max="2024">
+            </div>
+            <div class="btn-container">
+                <button class="btn">查詢歷屆資料</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>隊伍名稱</th>
+                            <th>作品名稱</th>
+                            <th>得分</th>
+                            <th>評語</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 假資料 -->
+                        <tr>
+                            <td>隊伍A</td>
+                            <td>創新作品1</td>
+                            <td>95</td>
+                            <td>非常創意，值得推薦</td>
+                        </tr>
+                        <tr>
+                            <td>隊伍B</td>
+                            <td>創新作品2</td>
+                            <td>88</td>
+                            <td>作品設計不錯，但需要改進細節</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 作品資料查看 -->
+        <div class="section">
+            <h3>作品資料</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>作品名稱</th>
+                            <th>隊伍名稱</th>
+                            <th>作品連結</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 假資料 -->
+                        <tr>
+                            <td>創新作品1</td>
+                            <td>隊伍A</td>
+                            <td><a href="project_detail.html?projectID=1">查看作品</a></td>
+                        </tr>
+                        <tr>
+                            <td>創新作品2</td>
+                            <td>隊伍B</td>
+                            <td><a href="project_detail.html?projectID=2">查看作品</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="index.html">
+                <button class="btn">返回首頁</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
