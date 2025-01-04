@@ -1,6 +1,6 @@
 # database_HTML
 
-README: 測試資料庫連接\n
+README: 測試資料庫連接
 專案簡介
 此文件旨在指導團隊成員如何測試與資料庫 database_pj 的連接是否成功。
 
