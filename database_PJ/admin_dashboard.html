@@ -144,7 +144,7 @@
         <!-- 公告管理 -->
         <div class="section">
             <h3>公告管理</h3>
-            <form action="manage_announcements.php" method="POST">
+            <form action="manage_announcements.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="announcementTitle">公告標題：</label>
                     <input type="text" id="announcementTitle" name="announcementTitle" required>
@@ -161,6 +161,7 @@
                     <button type="submit" class="btn">新增公告</button>
                 </div>
             </form>
+            
             <div class="table-container">
                 <table>
                     <thead>
