@@ -141,10 +141,10 @@
     <div class="content-container">
         <h2>學生系統</h2>
 
-        <!-- 報名與作品提交 -->
+        <!-- 隊伍報名 -->
         <div class="section">
-            <h3>報名與作品提交</h3>
-            <form action="submit_project.php" method="POST" enctype="multipart/form-data">
+            <h3>隊伍報名</h3>
+            <form action="register_team.php" method="POST">
                 <div class="form-group">
                     <label for="teamName">隊伍名稱：</label>
                     <input type="text" id="teamName" name="teamName" required>
@@ -152,6 +152,20 @@
                 <div class="form-group">
                     <label for="teamMembers">隊伍成員：</label>
                     <input type="text" id="teamMembers" name="teamMembers" placeholder="以逗號分隔成員名稱" required>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn">提交報名</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 作品上傳 -->
+        <div class="section">
+            <h3>作品上傳</h3>
+            <form action="upload_project.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="teamNameUpload">隊伍名稱：</label>
+                    <input type="text" id="teamNameUpload" name="teamNameUpload" required>
                 </div>
                 <div class="form-group">
                     <label for="projectDescription">作品描述：</label>
@@ -174,49 +188,9 @@
                     <input type="text" id="codeLink" name="codeLink" required>
                 </div>
                 <div class="btn-container">
-                    <button type="submit" class="btn">提交作品</button>
+                    <button type="submit" class="btn">上傳作品</button>
                 </div>
             </form>
-            
-        </div>
-
-        <!-- 歷屆資料查詢 -->
-        <div class="section">
-            <h3>歷屆資料查詢</h3>
-            <p>您可以查詢歷屆得獎作品與評分資料：</p>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>隊伍名稱</th>
-                            <th>作品名稱</th>
-                            <th>得獎年度</th>
-                            <th>評分</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- 假資料 -->
-                        <tr>
-                            <td>隊伍A</td>
-                            <td>創新作品1</td>
-                            <td>2023</td>
-                            <td>90</td>
-                        </tr>
-                        <tr>
-                            <td>隊伍B</td>
-                            <td>創新作品2</td>
-                            <td>2022</td>
-                            <td>85</td>
-                        </tr>
-                        <tr>
-                            <td>隊伍C</td>
-                            <td>創新作品3</td>
-                            <td>2021</td>
-                            <td>88</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
 
         <div class="btn-container">
